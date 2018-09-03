@@ -1,27 +1,27 @@
-{% extends 'base_main.html' %}
-{% load static %}
-
-{% block extCSS %}
-    {{ block.super }}
-    <link rel="stylesheet" type="text/css" href="{% static 'app/cart/cart.css' %}">
-{% endblock %}
-{% block extJS %}
-    {{ block.super }}
-    <script type="text/javascript" src="{% static 'app/cart/cart.js' %}"></script>
-{% endblock %}
-
-
-
-{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta charset="UTF-8">
+    <title>cart</title>
+    <link rel="stylesheet" type="text/css" href="/static/app/cart/cart.css">
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/base.css">
+</head>
+<body>
+<header></header>
+<content>
     <div id="cart">
         <h3><b>购物车</b></h3>
         <section class="full">
             <section>
                 <ul>
                     <li>
-                        <div class="clear">
+                        <div class="clear" id="userman">
                         <p class="infoJustify">收货人:</p>
-                        <p><span>鱼蛋老师</span></p>
+
                         </div>
                     </li>
                     <li>
@@ -100,13 +100,46 @@
                 </menu>
             </section>
         </section>
-
-
     </div>
+</content>
+<footer>
+    <a href="{% url 'axf:home' %}" class="home">
+        <dl>
+            <dt> <span></span></dt>
+            <dd>主页</dd>
+        </dl>
+    </a>
+    <a href="{% url 'axf:market' %}" class="market">
+        <dl>
+            <dt><span></span></dt>
+            <dd>闪购</dd>
+        </dl>
+    </a>
+    <a href="{% url 'axf:cart' %}" class="cart">
+        <dl>
+            <dt><span></span></dt>
+            <dd>购物车</dd>
+        </dl>
+    </a>
+    <a href="{% url 'axf:mine' %}" class="mine">
+        <dl>
+            <dt><span></span></dt>
+            <dd>我的</dd>
+        </dl>
+    </a>
+
+</footer>
+
+</body>
+<script type="text/javascript" src="/static/js/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/static/js/base.js"></script>
+<script type="text/javascript" src="/static/app/cart/cart.js"></script>
+</html>
 
 
 
-{% endblock %}
+
 
 
 

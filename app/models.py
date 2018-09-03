@@ -154,6 +154,11 @@ class UserModel(db.Model):
     isdelete = db.Column(db.Boolean,default=0)
 
 
+    def user_dict(self):
+        return {'id':self.id,'username':self.username,'password':self.password,'email':self.email,'sex':self.sex,'isdelete':self.isdelete}
+
+
+
 
 
 # 手动创建 用户 多:多 商品  的关系表
@@ -164,6 +169,9 @@ class CartModel(db.Model):
     c_goods = db.Column(db.ForeignKey(MarketGoods.id))  # 关联商品表
     c_num = db.Column(db.Integer,default=1)  # 表示购买数量
     c_isselect = db.Column(db.Boolean,default=1) # 表示是否选中
+
+    def Cart_dict(self):
+        return {'id':self.id,'c_user':self.c_user,'c_goods':self.c_goods,'c_num':self.c_num,'c_isselect':self.c_isselect}
 
 
 #

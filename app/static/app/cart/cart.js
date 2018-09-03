@@ -1,4 +1,21 @@
 $(function () {
+    //加载数据到前端页面，发送ajxs请求
+    $.ajax({
+        url:'/cart/',
+        type:'GET',
+        success: function (data) {
+            alert(data['code'])
+            if (data['code']=='400'){
+                window.open('/static/HTML/user/denglu.html',target="_self" )
+            }else {
+                username = data['user'].username
+                $("#userman").append('<p><span>'+username+'</span></p>')
+            }
+        }
+
+
+    })
+
 //   购物车中 点击 商品前的是否选中 按钮 即 勾
     $(".is_chooice").click(function () {
         //获得cartid
