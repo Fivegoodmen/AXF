@@ -22,9 +22,9 @@ class developConfig(Config):
         'driver':'pymysql',
         'user':'root',
         'password':'123456',
-        'host':'localhost',
+        'host':'10.11.68.40',
         'port':'3306',
-        'database':'flask_day04',
+        'database':'flask_axf',
     }
     SQLALCHEMY_DATABASE_URI=getdata(data)
 
