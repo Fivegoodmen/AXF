@@ -1,28 +1,42 @@
-{% extends 'base_main.html' %}
-{% load static %}
+<!DOCTYPE html>
+<html lang="en">
 
-{% block extJS %}
-    {{ block.super }}
-    <script type="text/javascript" src="{% static 'app/home/home.js' %}"></script>
-{% endblock %}
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/swiper.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/reset.css/">
+
+<!--#basemine-->
+    <link rel="stylesheet" type="text/css" href="/static/css/base.css">
+    
+    <!--home-->
+     <script type="text/javascript" src="/static/app/home/home.js"></script>
+     <link rel="stylesheet" type="text/css" href="/static/app/home/home.css">
 
 
-{% block extCSS %}
-    {{ block.super }}
-    <link rel="stylesheet" type="text/css" href="{% static 'app/home/home.css' %}">
-{% endblock %}
-
-
-{% block content %}
-    <div id="home">
+</head>
+<body>
+    <!--{% block header %}-->
+    <!---->
+    <!--{% endblock %}-->
+    
+    <!--{% block content %}-->
+    <!--home-->
+      <div id="home">
         <div class="swiper-container" id="topSwiper">
             <div class="swiper-wrapper">
-                {% for wheel in wheels %}
-                    <div class="swiper-slide"><a href="#"><img src="{{ wheel.img }}" alt="{{ wheel.name }}"></a></div>
-                {% endfor %}
+                <!--{% for wheel in wheels %}-->
+                    <!--<div class="swiper-slide"><a href="#"><img src="{{ wheel.img }}" alt="{{ wheel.name }}"></a></div>-->
+                <!--{% endfor %}-->
             </div>
             <!-- 如果需要分页器 -->
             <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+　　　　　　  <div class="swiper-button-next"></div>
 
         </div>
         <div class="topMenu">
@@ -117,14 +131,44 @@
 
     </div>
 
-{% endblock %}
+    <!--{% endblock %}-->
 
+    <!--{% block footer %}-->
 
+    <footer>
+        <a href="{% url 'axf:home' %}" class="home">
+            <dl>
+                <dt> <span></span></dt>
+                <dd>主页</dd>
+            </dl>
+        </a>
+        <a href="{% url 'axf:market' %}" class="market">
+            <dl>
+                <dt><span></span></dt>
+                <dd>闪购</dd>
+            </dl>
+        </a>
+        <a href="{% url 'axf:cart' %}" class="cart">
+            <dl>
+                <dt><span></span></dt>
+                <dd>购物车</dd>
+            </dl>
+        </a>
+        <a href="{% url 'axf:mine' %}" class="mine">
+            <dl>
+                <dt><span></span></dt>
+                <dd>我的</dd>
+            </dl>
+        </a>
 
+    </footer>
+    
+    <!--{% endblock %}-->
 
+<script type="text/javascript" src="/static/js/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/static/js/swiper.min.js"></script>
+<script type="text/javascript" src="/static/js/base.js"></script>
 
-
-
-
-
-
+</body>
+</html>
